@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>DJ GDS - O Melhor de Carazinho-RS</title>
+<style>
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  background:linear-gradient(135deg,#08080F,#12121F);
+  color:#fff;
+  font-family:'Segoe UI',Arial,sans-serif;
+  line-height:1.6;
+}
+.container{max-width:1000px; margin:0 auto; padding:0 20px;}
+
+/* Cabeçalho */
+.header{
+  text-align:center;
+  padding:40px 20px;
+}
+.header img{max-width:280px; margin-bottom:15px; border-radius:8px;}
+.header .destaque{color:#FF00C8; font-weight:bold; font-size:1.2rem;}
+.header p{color:#ccc; font-size:1.1rem; margin-bottom:25px;}
+
+/* Botões */
+.btn{
+  padding:14px 36px;
+  border-radius:50px;
+  font-weight:700;
+  display:inline-block;
+  margin:8px;
+  text-decoration:none;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:hover{transform:translateY(-3px);}
+.btn-cyan{
+  background:linear-gradient(90deg,#00F0FF,#00C8D8);
+  color:#000;
+  box-shadow:0 4px 20px rgba(0,240,255,0.3);
+}
+.btn-pink{
+  border:2px solid #FF00C8;
+  color:#FF00C8;
+}
+.btn-pink:hover{background:#FF00C8; color:#fff; box-shadow:0 4px 20px rgba(255,0,200,0.3);}
+
+/* Seções */
+section{padding:50px 0;}
+h2{font-size:1.8rem; margin-bottom:30px; text-align:center;}
+
+/* Player */
+.player{
+  max-width:550px;
+  margin:0 auto;
+  background:#111220;
+  border:2px solid transparent;
+  border-image:linear-gradient(90deg,#00F0FF,#FF00C8) 1;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 8px 30px rgba(0,0,0,0.5);
+}
+.player img{width:100%; border-radius:12px; margin-bottom:15px;}
+.player h3{color:#00F0FF; font-size:1rem; text-transform:uppercase; letter-spacing:2px;}
+.player h4{font-size:1.2rem; margin:10px 0 20px;}
+audio{width:100%; margin-top:10px; border-radius:8px;}
+
+/* Agenda */
+#agenda h2{color:#FF00C8;}
+.event{
+  background:#151525;
+  border-left:3px solid #FF00C8;
+  border-radius:8px;
+  padding:15px 20px;
+  margin:12px 0;
+  transition:background 0.3s;
+}
+.event:hover{background:#1E1E30;}
+.event b{color:#FF00C8; margin-right:10px;}
+
+/* Sobre */
+#sobre{text-align:center; max-width:700px; margin:0 auto;}
+#sobre p{font-size:1.05rem; color:#ddd;}
+
+/* Contato */
+#contato{
+  text-align:center;
+  background:#0F0F1F;
+  border-radius:20px;
+  margin:30px;
+  padding:40px 20px;
+  border:1px solid #00F0FF40;
+}
+.whatsapp-btn{
+  display:inline-block;
+  background:#25D366;
+  color:#fff;
+  padding:14px 30px;
+  border-radius:50px;
+  font-weight:bold;
+  text-decoration:none;
+  font-size:1.1rem;
+  margin:20px 0;
+  transition:transform 0.3s;
+}
+.whatsapp-btn:hover{transform:scale(1.05);}
+.contato-info{font-size:1.1rem; margin:10px 0;}
+.social-links a{
+  color:#00F0FF;
+  font-size:1.1rem;
+  margin:0 12px;
+  text-decoration:none;
+  transition:color 0.3s;
+}
+.social-links a:hover{color:#FF00C8;}
+
+/* Rodapé */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#666;
+  font-size:0.9rem;
+  border-top:1px solid #222;
+}
+</style>
+</head>
+<body>
+
+<!-- Cabeçalho com Logo -->
+<div class='header'>
+  <img src='https://i.ibb.co/Y4mLX4vW/Screenshot-20261024-185908-Instagram.jpg' alt='DJ GDS - Logo'>
+  <p class='destaque'>O Melhor DJ de Carazinho - RS e Região!</p>
+  <p>Para fazer sua festa inesquecível 🎉</p>
+  <a href='#musicas' class='btn btn-cyan'>OUÇA MEU SET</a>
+  <a href='#agenda' class='btn btn-pink'>AGENDA</a>
+  <a href='#contato' class='btn btn-pink'>SOLICITAR ORÇAMENTO</a>
+</div>
+
+<!-- Player / Músicas -->
+<section id='musicas'>
+  <div class='container'>
+    <h2 style='color:#00F0FF'>🎵 ÚLTIMO SET</h2>
+    <div class='player'>
+      <h3>NOW PLAYING</h3>
+      <img src='https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400' alt='Capa do set'>
+      <h4>POWERBASS MIX — DJ GDS</h4>
+      <audio controls>
+        <source src='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' type='audio/mpeg'>
+        Seu navegador não suporta áudio.
+      
+      <p style='margin-top:15px; font-size:0.9rem; color:#888;'>🔊 Substitua pelo seu próprio arquivo de áudio!</p>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre -->
+<section id='sobre'>
+  <div class='container'>
+    <h2 style='color:#fff'>SOBRE MIM</h2>
+    <p>Sou o DJ GDS, o DJ mais completo de Carazinho-RS! Trago energia, profissionalismo e a melhor seleção musical para o seu evento. Seja festa particular, casamento, evento corporativo ou balada — faço da sua ocasião um momento único e inesquecível. Atendo Carazinho e toda a região!</p>
+  </div>
+</section>
+
+<!-- Agenda -->
+<section id='agenda'>
+  <div class='container'>
+    <h2>📅 PRÓXIMAS APRESENTAÇÕES</h2>
+    <div class='event'><b>01 NOV</b> — FESTA DA CIDADE • Carazinho — 22:00</div>
+    <div class='event'><b>15 NOV</b> — BAILE DOS AMIGOS • Salão Comunitário — 21:00</div>
+    <div class='event'><b>30 NOV</b> — FESTA DE FORMATURA • Clube Social Carazinho — 22:00</div>
+    <div class='event'><b>10 DEZ</b> — EVENTO CORPORATIVO • Hotel Central — 20:00</div>
+  </div>
+</section>
+
+<!-- Contato -->
+<section id='contato'>
+  <div class='container'>
+    <h2 style='color:#00F0FF'>💬 ENTRE EM CONTATO</h2>
+    <p class='contato-info'><strong>📍 Carazinho - RS</strong> e região</p>
+    <p class='contato-info'><strong>📱 WhatsApp:</strong> +55 54 9651-0136</p>
+    
+    <a href='https://wa.me/555496510136' target='_blank' class='whatsapp-btn'>💬 Falar no WhatsApp</a>
+    
+    <p style='margin-top:20px; color:#aaa;'>Atendo festas, casamentos, eventos corporativos e muito mais! Solicite seu orçamento sem compromisso.</p>
+    
+    <div class='social-links' style='margin-top:25px;'>
+      <a href='#' target='_blank'>📷 Instagram</a>
+      <a href='#' target='_blank'>🎧 SoundCloud</a>
+      <a href='#' target='_blank'>🎵 Spotify</a>
+    </div>
+  </div>
+</section>
+
+<!-- Rodapé -->
+<footer>
+  © 2026 DJ GDS — O Melhor DJ de Carazinho-RS | Todos os direitos reservados.<br>
+  Contato: +55 54 9651-0136
+</footer>
+
+</body>
+</html>
