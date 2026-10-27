@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09070f">
+  <meta name="description" content="DJ GDS — música, energia e experiências inesquecíveis. Consulte disponibilidade para seu evento.">
+  <title>DJ GDS | Música, energia e experiência</title>
+  <style>
+    :root{--bg:#08070d;--panel:#12101b;--purple:#a855f7;--pink:#ec4899;--white:#f8f7ff;--muted:#b8b2c8;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--white);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1160px,92%);margin:auto}
+    .topbar{position:absolute;z-index:5;top:0;left:0;width:100%;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;letter-spacing:2px;font-size:1.35rem}.brand span{color:var(--purple)}
+    .navlinks{display:flex;gap:22px;color:#eee;font-size:.92rem}
+    .navlinks a:hover{color:#d8a7ff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:999px;background:linear-gradient(100deg,var(--purple),var(--pink));font-weight:800;color:white;border:0;box-shadow:0 0 28px rgba(168,85,247,.22);transition:.2s}
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+    .btn.ghost{background:rgba(255,255,255,.07);border:1px solid var(--line);box-shadow:none}
+    .hero{min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:130px 0 65px;background:linear-gradient(90deg,rgba(7,6,13,.96) 0%,rgba(7,6,13,.78) 42%,rgba(7,6,13,.18) 100%),linear-gradient(0deg,var(--bg),transparent 28%),url('capa.jpg') center 34%/cover no-repeat}
+    .hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 16% 35%,rgba(168,85,247,.2),transparent 34%)}
+    .hero-content{position:relative;z-index:1;max-width:650px}
+    .eyebrow{color:#d9b5ff;text-transform:uppercase;letter-spacing:3px;font-size:.78rem;font-weight:800}
+    h1{font-size:clamp(3.5rem,10vw,7.6rem);line-height:.95;letter-spacing:-4px;margin:18px 0}
+    h1 span{display:block;color:transparent;-webkit-text-stroke:1px #d6a5ff;text-shadow:0 0 30px rgba(168,85,247,.12)}
+    .hero p{max-width:520px;color:#e0dbe9;font-size:1.12rem;margin:22px 0 28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-tag{margin-top:28px;color:#d1cadf;font-size:.85rem}
+    section{padding:88px 0}
+    .section-head{max-width:720px;margin-bottom:35px}
+    .section-head h2{font-size:clamp(2rem,5vw,3.3rem);line-height:1.1;margin:10px 0 14px}
+    .section-head p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(145deg,#171321,#0f0d16);border:1px solid var(--line);border-radius:20px;padding:24px;min-width:0}
+    .card h3{margin:10px 0 8px;font-size:1.1rem}.card p{color:var(--muted);font-size:.95rem}
+    .icon{width:44px;height:44px;display:grid;place-items:center;border-radius:14px;background:rgba(168,85,247,.15);font-size:1.4rem}
+    .music-layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+    .player-card{background:linear-gradient(140deg,rgba(168,85,247,.16),rgba(236,72,153,.05)),var(--panel);border:1px solid var(--line);padding:25px;border-radius:22px}
+    .track{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}
+    .track:last-child{border-bottom:0}.disc{width:52px;height:52px;flex:0 0 52px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#21142d 0 24%,#a855f7 26% 29%,#17111f 31% 100%);box-shadow:0 0 20px #a855f744}
+    .track-info{flex:1;min-width:0}.track-info strong{display:block}.track-info small{color:var(--muted)}
+    audio{width:100%;margin-top:12px;height:38px}
+    .media-frame{position:relative;overflow:hidden;border-radius:20px;border:1px solid var(--line);background:#100d18;aspect-ratio:16/9}
+    .media-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .media-note{font-size:.82rem;color:var(--muted);margin-top:12px}
+    .gallery{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:15px}
+    .gallery-item{min-height:220px;border-radius:18px;padding:22px;display:flex;align-items:end;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent 80%),radial-gradient(circle at 70% 20%,#8436c9,transparent 40%),linear-gradient(135deg,#17122a,#09070d);border:1px solid var(--line)}
+    .gallery-item:nth-child(2){background:linear-gradient(0deg,rgba(0,0,0,.8),transparent 80%),radial-gradient(circle at 20% 20%,#c026d3,transparent 40%),linear-gradient(135deg,#1b1027,#09070d)}
+    .gallery-item:nth-child(3){background:linear-gradient(0deg,rgba(0,0,0,.8),transparent 80%),radial-gradient(circle at 80% 30%,#2563eb,transparent 42%),linear-gradient(135deg,#11172b,#09070d)}
+    .gallery-item strong{font-size:1.1rem}
+    .review-label{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:#e7c8ff;background:#a855f722;border:1px solid #a855f755;padding:5px 9px;border-radius:999px;margin-bottom:10px}
+    .stars{color:#fbbf24;letter-spacing:3px;margin-bottom:8px}
+    .reviewer{margin-top:16px;font-weight:800}.reviewer small{display:block;font-weight:400;color:var(--muted)}
+    .cta{background:radial-gradient(ellipse at top,rgba(168,85,247,.25),transparent 60%),#100d17;text-align:center;border-block:1px solid var(--line)}
+    .cta h2{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin:14px 0}
+    .cta p{color:var(--muted);max-width:650px;margin:0 auto 25px}
+    footer{padding:30px 0;color:var(--muted);font-size:.88rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .whatsapp{position:fixed;z-index:10;right:20px;bottom:20px;border-radius:999px;padding:14px 18px;background:#20c66a;color:#06160b;font-weight:900;box-shadow:0 8px 28px #0008}
+    .whatsapp:hover{filter:brightness(1.07)}
+    .small-note{color:var(--muted);font-size:.83rem;margin-top:18px}
+    @media(max-width:800px){.navlinks{display:none}.hero{min-height:84vh;background-position:58% center}.hero:before{content:"";position:absolute;inset:0;background:rgba(7,6,13,.2)}.grid{grid-template-columns:1fr}.music-layout{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.gallery-item{min-height:170px}section{padding:65px 0}h1{letter-spacing:-2px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="#inicio">DJ <span>GDS</span></a>
+        <div class="navlinks">
+          <a href="#sobre">Sobre</a><a href="#musicas">Músicas</a><a href="#videos">Vídeos</a><a href="#avaliacoes">Avaliações</a>
+        </div>
+        <a class="btn" href="https://wa.me/5554996510136?text=Ol%C3%A1%2C%20DJ%20GDS!%20Gostaria%20de%20consultar%20a%20disponibilidade%20para%20meu%20evento." target="_blank" rel="noopener">Contratar ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap">
+        <div class="hero-content">
+          <div class="eyebrow">DJ • Eventos • Energia</div>
+          <h1>DJ <span>GDS</span></h1>
+          <p>O som certo, na hora certa. Uma experiência musical feita para transformar a pista e marcar o seu evento.</p>
+          <div class="actions">
+            <a class="btn" href="https://wa.me/5554996510136?text=Ol%C3%A1%2C%20DJ%20GDS!%20Quero%20fazer%20um%20or%C3%A7amento%20para%20meu%20evento." target="_blank" rel="noopener">🔥 Solicitar orçamento</a>
+            <a class="btn ghost" href="#musicas">▶ Ouvir sets</a>
+          </div>
+          <div class="hero-tag">Festas • Baladas • Aniversários • Eventos especiais</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Conheça o artista</div>
+          <h2>Mais que música.<br><span style="color:#c084fc">É energia na pista.</span></h2>
+          <p>DJ GDS cria a atmosfera de cada evento com seleção musical, leitura de pista e muita conexão com o público. Entre em contato para conversar sobre o estilo e a estrutura ideal para sua festa.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="icon">🎚️</div><h3>Set sob medida</h3><p>Seleção musical adaptada ao clima, ao público e ao tipo de evento.</p></article>
+          <article class="card"><div class="icon">⚡</div><h3>Energia do começo ao fim</h3><p>Transições e repertório pensados para manter a pista envolvida.</p></article>
+          <article class="card"><div class="icon">🎉</div><h3>Seu evento, sua vibe</h3><p>Converse com o DJ para alinhar referências, pedidos e detalhes da festa.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="musicas">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Dê o play</div>
+          <h2>Sets e sons</h2>
+          <p>Uma demonstração de player para você testar. Depois, substitua pelo áudio ou pelos sets oficiais do DJ GDS.</p>
+        </div>
+        <div class="music-layout">
+          <div class="player-card">
+            <div class="track"><div class="disc">♫</div><div class="track-info"><strong>Demo Mix — sessão de exemplo</strong><small>Áudio demonstrativo • não é um set oficial do DJ GDS</small></div></div>
+            <audio controls preload="none">
+              <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+              Seu navegador não suporta áudio HTML5.
+            </audio>
+            <p class="media-note">Toque em play para testar o player. A reprodução depende de conexão com a internet.</p>
+          </div>
+          <div class="player-card">
+            <div class="eyebrow">Quer ouvir mais?</div>
+            <h3 style="font-size:1.5rem;margin:12px 0">Seu próximo set pode entrar aqui.</h3>
+            <p style="color:var(--muted);margin-bottom:20px">Quando tiver um link do SoundCloud, YouTube ou outro player público, troque este botão pelo link oficial do seu mix.</p>
+            <a class="btn ghost" href="https://soundcloud.com/" target="_blank" rel="noopener">Abrir SoundCloud ↗</a>
+            <p class="small-note">O áudio acima é apenas uma demonstração técnica e não representa uma música ou mix autoral do DJ GDS.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Assista</div>
+          <h2>Vídeo em destaque</h2>
+          <p>Exemplo de vídeo incorporado do YouTube. Você poderá substituir pelo vídeo de uma apresentação real do DJ GDS.</p>
+        </div>
+        <div class="media-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/jfKfPfyJRdk" title="Vídeo demonstrativo incorporado do YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="media-note">Vídeo de demonstração incorporado do YouTube; não é uma gravação do DJ GDS. Para trocar, substitua o código do vídeo no endereço após <code>/embed/</code>.</p>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Momentos</div>
+          <h2>Galeria de eventos</h2>
+          <p>Espaços de exemplo para destacar apresentações, festas e bastidores. Adicione suas próprias fotos e vídeos para personalizar a galeria.</p>
+        </div>
+        <div class="gallery">
+          <div class="gallery-item"><div><div class="eyebrow">01 / Ao vivo</div><strong>Energia na pista</strong></div></div>
+          <div class="gallery-item"><div><div class="eyebrow">02 / A vibe</div><strong>Luzes & música</strong></div></div>
+          <div class="gallery-item"><div><div class="eyebrow">03 / Bastidores</div><strong>Preparando o set</strong></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="avaliacoes">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Quem contrata recomenda</div>
+          <h2>Avaliações</h2>
+          <p>Os cartões abaixo são exemplos ilustrativos de layout, não depoimentos reais. Substitua-os por avaliações autorizadas de clientes antes de divulgar o site.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="review-label">Exemplo ilustrativo</span><div class="stars">★★★★★</div>
+            <p>“A música combinou muito com a festa e a pista ficou animada do começo ao fim!”</p>
+            <div class="reviewer">Cliente de evento<small>Depoimento fictício para demonstração</small></div>
+          </article>
+          <article class="card">
+            <span class="review-label">Exemplo ilustrativo</span><div class="stars">★★★★★</div>
+            <p>“Foi fácil combinar os detalhes e o repertório ficou com a cara da comemoração.”</p>
+            <div class="reviewer">Cliente de aniversário<small>Depoimento fictício para demonstração</small></div>
+          </article>
+          <article class="card">
+            <span class="review-label">Exemplo ilustrativo</span><div class="stars">★★★★★</div>
+            <p>“Ótima energia e seleção musical. A galera curtiu muito a noite!”</p>
+            <div class="reviewer">Cliente de festa<small>Depoimento fictício para demonstração</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contato">
+      <div class="wrap">
+        <div class="eyebrow">Vamos fazer acontecer?</div>
+        <h2>Sua festa merece<br>uma trilha sonora marcante.</h2>
+        <p>Consulte a disponibilidade do DJ GDS. Envie a data, a cidade e o tipo de evento pelo WhatsApp para iniciar o orçamento.</p>
+        <a class="btn" href="https://wa.me/5554996510136?text=Ol%C3%A1%2C%20DJ%20GDS!%20Quero%20consultar%20a%20disponibilidade.%20Data%3A%20____.%20Cidade%3A%20____.%20Evento%3A%20____." target="_blank" rel="noopener">📲 Falar com DJ GDS</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><strong>DJ GDS</strong> · Música, energia e experiência.</div>
+      <div>© <span id="year"></span> DJ GDS. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/5554996510136?text=Ol%C3%A1%2C%20DJ%20GDS!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20contrata%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Contratar DJ GDS pelo WhatsApp">WhatsApp ↗</a>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
